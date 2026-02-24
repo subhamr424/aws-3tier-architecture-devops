@@ -1,25 +1,100 @@
-# AWS 3-Tier Architecture DevOps Project
+# 🚀 AWS 3-Tier Architecture with DevOps Automation
 
-This project demonstrates a production-style 3-tier architecture on AWS.
+This project demonstrates a production-ready 3-Tier Architecture deployed on AWS using Infrastructure as Code (Terraform) and automated CI/CD pipeline.
 
-## Architecture
+---
+
+## 🏗 Architecture Overview
+
+Client → Application Load Balancer → EC2 (Dockerized Application) → RDS (MySQL)
+
+### 🔹 Presentation Layer
+- Application Load Balancer (ALB)
+- Public Subnets
+
+### 🔹 Application Layer
+- EC2 Instance
+- Dockerized Application
+- Security Groups
+
+### 🔹 Database Layer
+- Amazon RDS (MySQL)
+- Private Subnet Deployment
+
+---
+
+## ⚙️ Infrastructure as Code
+
+All infrastructure is provisioned using **Terraform**, including:
 
 - VPC
-- Public Subnet
-- Private Subnet
-- EC2 (Application Layer)
-- RDS (Database Layer)
-- Application Load Balancer
-- Terraform for Infrastructure
-- Docker for Application Deployment
-- GitHub Actions for CI/CD
+- Public & Private Subnets
+- Internet Gateway
+- Security Groups
+- EC2 Instance
+- RDS Instance
+- ECR Repository
+- Load Balancer
 
-## Tools Used
+---
+
+## 🔄 CI/CD Pipeline
+
+1. Developer pushes code to GitHub
+2. GitHub Actions triggers workflow
+3. Docker image is built
+4. Image pushed to Amazon ECR
+5. EC2 pulls latest image and deploys automatically
+
+---
+
+## 🐳 Dockerized Application
+
+The application is containerized using Docker to ensure:
+- Portability
+- Scalability
+- Consistent runtime environment
+
+---
+
+## 🛠 Tech Stack
 
 - AWS
 - Terraform
 - Docker
 - GitHub Actions
+- Linux
+- IAM
 
-## Author
-Subham Rathore - DevOps Engineer
+---
+
+## 📂 Project Structure
+
+```
+.
+├── app/
+│   ├── Dockerfile
+│   └── app.py
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+└── .github/workflows/
+    └── deploy.yml
+```
+
+---
+
+## 🎯 Key Highlights
+
+- Production-style 3-Tier Architecture
+- Infrastructure as Code (IaC)
+- Automated CI/CD Pipeline
+- Secure Networking (Public & Private Subnets)
+- Containerized Deployment Strategy
+
+---
+
+## 👨‍💻 Author
+
+**Subham Rathore**
